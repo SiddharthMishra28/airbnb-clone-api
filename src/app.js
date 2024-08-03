@@ -10,7 +10,6 @@ dotenv.config();
 const app = express();
 
 app.use(express.json());
-app.use(cors());
 
 const authRoutes = require('./routes/AuthRoutes');
 const userRoutes = require('./routes/UserRoutes');
@@ -18,6 +17,8 @@ const listingRoutes = require('./routes/ListingRoutes');
 const bookingRoutes = require('./routes/BookingRoutes');
 const reviewRoutes = require('./routes/ReviewRoutes');
 const dashboardRoutes = require('./routes/DashboardRoutes');
+
+app.use(cors());
 
 // Swagger setup
 const swaggerSpec = swaggerJsdoc(swaggerOptions);
